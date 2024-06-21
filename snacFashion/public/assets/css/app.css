@@ -1,86 +1,12 @@
-/* app.scss */
-/* .customMouseCursor {
-    left: 0;
-    mix-blend-mode: difference;
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    z-index: 999
-}
-
-.customMouseCursor :has(.carouselArrowNext),.customMouseCursor:has(.carouselArrowPrevious) {
-    mix-blend-mode: lighten
-}
-
-.customMouseCursor .inner {
-    background-color:#f9f8f5;
-    border-radius: .75rem;
-    font-size: .6rem;
-    height: 1.4rem;
-    left: -.7rem;
-    opacity: 0;
-    overflow: hidden;
-    position: relative;
-    position: absolute;
-    text-align: center;
-    top: -.7rem;
-    transition: transform .7s cubic-bezier(0.22,1,0.36,1) ,background-color .5s;
-    width: 1.4rem
-}
-
-.customMouseCursor .textWrap {
-    transform: translate3d(0,100%,0);
-    transition: transform .3s ease-out
-}
-
-.customMouseCursor .customMouseCursor__arrowSvg {
-    fill: #000;
-    display: none;
-    height: 100%;
-    width: 100%
-}
-
-.customMouseCursor .customMouseCursor__arrowCircle,.customMouseCursor .customMouseCursor__arrowPath {
-    stroke: #f9f8f5
-}
-
-.customMouseCursor.instantiated .inner {
-    opacity: 1
-}
-
-.customMouseCursor.carouselArrowNext .inner,.customMouseCursor.carouselArrowPrevious .inner {
-    border-radius: 1.6rem;
-    height: 3.2rem;
-    left: -1.6rem;
-    top: -1.6rem;
-    width: 3.2rem
-}
-
-.customMouseCursor.carouselArrowNext .customMouseCursor__arrowSvg,.customMouseCursor.carouselArrowPrevious .customMouseCursor__arrowSvg {
-    display: block
-}
-
-.customMouseCursor.carouselArrowPrevious .inner {
-    transform: rotate(180deg)
-}
-
-.customMouseCursor.textHover .inner {
-    width: 4rem
-}
-
-.customMouseCursor.textHover .textWrap {
-    transform: translateZ(0);
-    transition: transform .4s ease-out .3s
-}
-
-.customMouseCursor.anchorHover .inner {
-    transform: scale(.5)
-} */
+/* app.css */
 
 h1 {
-    font-size: 36px;
-    font-family: sans-serif;
+    font-size: 3rem !important;
+    font-family: "ff-good-headline-web-pro-ext", sans-serif;
+    font-weight: 1000 !important;
+    font-style: normal;
 }
+
 h2 {
     font-size: 25px;
     text-transform: uppercase;
@@ -92,7 +18,8 @@ p {
     font-size: 18px;
 }
 
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -146,12 +73,14 @@ header ul li a:hover {
 }
 
 .banner-content {
+
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
     text-align: center;
+    z-index: 2;
 }
 
 .subTitleBanner {
@@ -159,7 +88,7 @@ header ul li a:hover {
     margin-bottom: 36px;
 }
 
-.btn {
+.btn-banner {
     text-decoration: none;
     font-family: sans-serif;
     padding: 0.6rem 0.7rem;
@@ -168,9 +97,10 @@ header ul li a:hover {
     color: #fff;
 }
 
-.btn:hover {
+.btn-banner:hover {
     color: #000;
     background-color: #fff;
+    text-decoration: none;
 }
 
 .conteudo1 {
@@ -204,7 +134,8 @@ header ul li a:hover {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    filter: brightness(50%); /* Filtro escuro transparente */
+    filter: brightness(75%);
+    /* Filtro escuro transparente */
 }
 
 .stylist-overlay {
@@ -213,20 +144,23 @@ header ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Filtro escuro transparente */
+    background: rgba(0, 0, 0, 0.171);
+    /* Filtro escuro transparente */
     z-index: 1;
 }
 
 .stylist-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
 }
 
 .tag-stylist {
@@ -242,16 +176,16 @@ header ul li a:hover {
 }
 
 .btn-stylist {
+    transition: all .9s ease;
+    font-size: 2.5rem;
     text-decoration: none;
     font-family: sans-serif;
-    padding: 0.6rem 0.7rem;
-    border: solid 2px #fff;
-    border-radius: 20px;
     color: #fff;
     z-index: 2;
 }
 
 .btn-stylist:hover {
     color: #000;
-    background-color: #fff;
+    text-decoration: none;
+    font-size: 2.6rem;
 }
