@@ -22,46 +22,46 @@
 
         /* Preloader styles */
         .preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    overflow: hidden;
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            overflow: hidden;
+        }
 
-.preloader .preload-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
+        .preloader .preload-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
 
-.preloader .preload-logo {
-    position: relative;
-    z-index: 2;
-    max-width: 50%;
-    max-height: 50%;
-}
+        .preloader .preload-logo {
+            position: relative;
+            z-index: 2;
+            max-width: 50%;
+            max-height: 50%;
+        }
 
-.hidden {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
+        .hidden {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
     </style>
 </head>
 
 <body>
     <div class="preloader">
-        <img src="{{ asset('assets/img/pre.png') }}" alt="Preload Background" class="preload-image">
+        <img src="{{ asset('assets/img/pre2.png') }}" alt="Preload Background" class="preload-image">
         <img src="{{ asset('assets/img/logo2.png') }}" alt="Logo" class="preload-logo">
     </div>
 
@@ -83,6 +83,7 @@
             <h1 data-aos="fade-up" data-aos-duration="1000">SMPFW: SETEMBRO 2025</h1>
             <p data-aos="zoom-in" data-aos-duration="1500" class="subTitleBanner">Uma campanha imperdível</p>
             <a href="#" class="btn-banner">Veja mais</a>
+            <a class="btn-mais" href="#carouselExampleFade">ver mis</a>
         </div>
     </div>
 
@@ -90,7 +91,8 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100 stylist-banner" src="{{ asset('assets/img/3.jpeg') }}" alt="Endrik Souls">
+                <img class="d-block w-100 stylist-banner parallax" src="{{ asset('assets/img/3.jpeg') }}"
+                    alt="Endrik Souls">
                 <div class="stylist-overlay"></div>
                 <div class="stylist-content">
                     {{-- <p class="tag-stylist">News</p> --}}
@@ -98,7 +100,8 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 stylist-banner" src="{{ asset('assets/img/6.jpeg') }}" alt="Estilista 2">
+                <img class="d-block w-100 stylist-banner parallax" src="{{ asset('assets/img/6.jpeg') }}"
+                    alt="Estilista 2">
                 <div class="stylist-overlay"></div>
                 <div class="stylist-content">
                     {{-- <p class="tag-stylist">News</p> --}}
@@ -106,7 +109,8 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 stylist-banner" src="{{ asset('assets/img/5.jpeg') }}" alt="Estilista 3">
+                <img class="d-block w-100 stylist-banner parallax" src="{{ asset('assets/img/5.jpeg') }}"
+                    alt="Estilista 3">
                 <div class="stylist-overlay"></div>
                 <div class="stylist-content">
                     {{-- <p class="tag-stylist">News</p> --}}
@@ -124,6 +128,12 @@
         </a>
     </div>
 
+    <div class="contato">
+        <p>Se interessou?</p>
+        <a href="#">Fale conosco!</a>
+    </div>
+
+
 
     <script>
         window.addEventListener('load', function() {
@@ -136,7 +146,7 @@
             }, 3000); // Duração de 3 segundos
         });
     </script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script>
         AOS.init();
