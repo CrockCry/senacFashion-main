@@ -244,3 +244,52 @@ header ul li a:hover {
 .contato p {
     margin-right: 1rem;
 }
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 20px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+    padding: 5px 0;
+}
+
+.footer-column ul li a:hover {
+    color: #ddd;
+}
+
+.footer-column p {
+    margin: 5px 0;
+}

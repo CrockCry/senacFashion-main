@@ -133,6 +133,33 @@
         <a href="#">Fale conosco!</a>
     </div>
 
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Rotas -->
+        <div class="footer-column">
+            <h3>Rotas</h3>
+            <ul>
+                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="#">Desfile</a></li>
+                <li><a href="#">Estilistas</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </div>
+        <!-- Contato -->
+        <div class="footer-column">
+            <h3>Contato</h3>
+            <p>Telefone: (11) 1234-5678</p>
+            <p>Email: contato@exemplo.com</p>
+            <p>Endereço: Rua Exemplo, 123, São Paulo, SP</p>
+        </div>
+        <!-- Mapa -->
+        <div class="footer-column">
+            <h3>Localização</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d888.7149743827646!2d-46.431801569948426!3d-23.495601141859165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce63dda7be6fb9%3A0xa74e7d5a53104311!2sSenac%20S%C3%A3o%20Miguel%20Paulista!5e0!3m2!1spt-BR!2sbr!4v1719259055913!5m2!1spt-BR!2sbr" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</footer>
 
 
     <script>
