@@ -131,7 +131,7 @@ header ul li a:hover {
     border: solid 2px #000;
 }
 
-.btn-mais{
+.btn-mais {
     display: block;
     text-decoration: none;
     font-family: sans-serif;
@@ -156,7 +156,6 @@ header ul li a:hover {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.171);
-    /* Filtro escuro transparente */
     z-index: 1;
 }
 
@@ -187,19 +186,44 @@ header ul li a:hover {
 }
 
 .btn-stylist {
-    transition: all .9s ease;
+    transition: all 0.9s ease;
     font-size: 2.5rem;
     text-decoration: none;
     font-family: sans-serif;
     color: #fff;
-    z-index: 2;
+    z-index: 4; /* Aumentado para garantir que fique à frente */
+    position: relative;
 }
 
 .btn-stylist:hover {
     color: #000;
-    text-decoration: none;
+    text-decoration: underline;
+    font-weight: 600;
     font-size: 2.6rem;
+    transition: all 0.9s ease;
 }
+
+.img-artista {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50vh;
+    height: 50vh;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden; /* Adicionado para ocultar completamente */
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s; /* Adicionado delay para visibilidade */
+    z-index: 3;
+}
+
+.btn-stylist:hover + .img-artista,
+.btn-stylist:hover + .img-artista {
+    opacity: 1;
+    visibility: visible; /* Torna visível quando em hover */
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s; /* Remove delay na visibilidade */
+}
+
+
 
 .contato {
     background-image: url('../img/pre.png');
@@ -209,40 +233,51 @@ header ul li a:hover {
     padding: 50px;
     color: #fff;
     text-align: center;
-    position: relative; /* Garante que o conteúdo do elemento pseudo fique dentro deste div */
-    overflow: hidden; /* Evita que o fundo escurecido vaze para fora do elemento */
+    position: relative;
+    /* Garante que o conteúdo do elemento pseudo fique dentro deste div */
+    overflow: hidden;
+    /* Evita que o fundo escurecido vaze para fora do elemento */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
 
 .contato::after {
-    content: ""; /* Cria o pseudo-elemento */
-    position: absolute; /* Posicionamento absoluto em relação ao elemento pai */
+    content: "";
+    /* Cria o pseudo-elemento */
+    position: absolute;
+    /* Posicionamento absoluto em relação ao elemento pai */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.685); /* Cor preta com 50% de opacidade */
-    z-index: 1; /* Garante que o pseudo-elemento fique atrás do conteúdo */
+    background-color: rgba(0, 0, 0, 0.685);
+    /* Cor preta com 50% de opacidade */
+    z-index: 1;
+    /* Garante que o pseudo-elemento fique atrás do conteúdo */
 }
 
 .contato p,
 .contato a {
-    position: relative; /* Garante que o conteúdo fique na frente do fundo escurecido */
-    z-index: 2; /* Garante que o conteúdo fique na frente do pseudo-elemento */
+    position: relative;
+    /* Garante que o conteúdo fique na frente do fundo escurecido */
+    z-index: 2;
+    /* Garante que o conteúdo fique na frente do pseudo-elemento */
     font-size: 3rem;
-    font-family: "ff-good-headline-web-pro-ext", sans-serif;
-    font-weight: 1000 ;
+    font-family: the-seasons, sans-serif;
     font-style: normal;
+    font-weight: 700;
     color: #fff;
     margin: 0px;
 }
 
 .contato p {
     margin-right: 1rem;
+}
+
+.contato a:hover {
+    text-decoration: none;
+    color: red;
 }
 
 .footer {

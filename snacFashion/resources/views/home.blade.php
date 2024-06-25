@@ -8,6 +8,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/ssf8bhz.css">
+    <link rel="stylesheet" href="https://use.typekit.net/peg6efo.css">
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -95,8 +96,8 @@
                     alt="Endrik Souls">
                 <div class="stylist-overlay"></div>
                 <div class="stylist-content">
-                    {{-- <p class="tag-stylist">News</p> --}}
                     <a href="#" class="btn-stylist">Endrik Souls</a>
+                    <img class="img-artista" src="{{ asset('assets/img/artista.png') }}" alt="Imagem do Artista">
                 </div>
             </div>
             <div class="carousel-item">
@@ -104,33 +105,33 @@
                     alt="Estilista 2">
                 <div class="stylist-overlay"></div>
                 <div class="stylist-content">
-                    {{-- <p class="tag-stylist">News</p> --}}
                     <a href="#" class="btn-stylist">Jully Sult</a>
+                    <img class="img-artista" src="{{ asset('assets/img/artista.png') }}" alt="Imagem do Artista">
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 stylist-banner parallax" src="{{ asset('assets/img/5.jpeg') }}"
-                    alt="Estilista 3">
+                <img class="d-block w-100 stylist-banner" src="{{ asset('assets/img/5.jpeg') }}" alt="Estilista 3">
                 <div class="stylist-overlay"></div>
                 <div class="stylist-content">
-                    {{-- <p class="tag-stylist">News</p> --}}
                     <a href="#" class="btn-stylist">Gregory Canot</a>
+                    <img class="img-artista" src="{{ asset('assets/img/artista.png') }}" alt="Imagem do Artista">
                 </div>
             </div>
+
         </div>
         <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon" ariicona-hidden="true"></span>
             <span class="sr-only">Próximo</span>
         </a>
     </div>
 
     <div class="contato">
-        <p>Se interessou?</p>
-        <a href="#">Fale conosco!</a>
+        <p>Faça parte da revolução</p>
+        <a href="#"></a>
     </div>
 
 <!-- Footer -->
