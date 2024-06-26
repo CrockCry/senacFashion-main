@@ -84,8 +84,10 @@
             <h1 data-aos="fade-up" data-aos-duration="1000">SMPFW: SETEMBRO 2025</h1>
             <p data-aos="zoom-in" data-aos-duration="1500" class="subTitleBanner">Uma campanha imperdível</p>
             <a href="#" class="btn-banner">Veja mais</a>
-            <a class="btn-mais" href="#carouselExampleFade">ver mis</a>
         </div>
+        <a class="btn-mais" href="#carouselExampleFade">
+            <img src="{{ asset('assets/img/arrow.png') }}" alt="Arrow Icon">
+        </a>
     </div>
 
     <!-- Carousel de Estilistas -->

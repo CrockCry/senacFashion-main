@@ -3,8 +3,7 @@
 
 h1 {
     font-size: 3rem !important;
-    font-family: "ff-good-headline-web-pro-ext", sans-serif;
-    font-weight: 1000 !important;
+    font-family: sans-serif;
     font-style: normal;
 }
 
@@ -93,8 +92,8 @@ header ul li a:hover {
     text-decoration: none;
     font-family: sans-serif;
     padding: 0.6rem 0.7rem;
-    border: solid 2px #fff;
-    border-radius: 20px;
+    border: solid 1.5px #fff;
+    transition: all 0.9s ease;
     color: #fff;
 }
 
@@ -102,6 +101,7 @@ header ul li a:hover {
     color: #000;
     background-color: #fff;
     text-decoration: none;
+    transition: all 0.9s ease;
 }
 
 .conteudo1 {
@@ -132,13 +132,27 @@ header ul li a:hover {
 }
 
 .btn-mais {
-    display: block;
+    position: absolute;
+    bottom: 20px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
     text-decoration: none;
-    font-family: sans-serif;
-    padding: 2rem;
-    color: #fff;
-    font-family: sans-serif;
-    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+.btn-mais img {
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: 40px; /* Ajuste o tamanho conforme necessário */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px); /* Ajuste a altura do movimento conforme necessário */
+    }
 }
 
 .stylist-banner {
