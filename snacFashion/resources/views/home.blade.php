@@ -66,6 +66,7 @@
         <img src="{{ asset('assets/img/logo2.png') }}" alt="Logo" class="preload-logo">
     </div>
 
+    {{-- cabeçalho --}}
     <header>
         <ul>
             <li><a href="{{ route('home') }}">Home</a></li>
@@ -74,6 +75,7 @@
             <li><a href="#">Contato</a></li>
         </ul>
     </header>
+    {{-- banner --}}
     <div class="banner">
         <video autoplay muted loop>
             <source src="{{ asset('assets/vid/banner1.mov') }}" type="video/mp4">
@@ -119,7 +121,6 @@
                     <img class="img-artista" src="{{ asset('assets/img/artista.png') }}" alt="Imagem do Artista">
                 </div>
             </div>
-
         </div>
         <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -131,51 +132,60 @@
         </a>
     </div>
 
+
+    {{-- sobre --}}
+    <div class="about">
+        <h1>Sobre</h1>
+        <div>
+            <p> A iniciativa do evento São Miguel Paulista Fashion Week é promovida pelo Senac – Instituição reconhecida
+                por seu compromisso com a educação de qualidade e a inovação.
+                Com a primeira edição, realizada em 2023, o evento celebra a moda por meio da inclusão,
+                sustentabilidade, diversidade e empreendedorismo no setor.
+            </p>
+        </div>
+
+    </div>
+
+
+    {{-- contato --}}
     <div class="contato">
         <p>Faça parte da revolução</p>
         <a href="#"></a>
     </div>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-container">
-        <!-- Rotas -->
-        <div class="footer-column">
-            <h3>Rotas</h3>
-            <ul>
-                <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="#">Desfile</a></li>
-                <li><a href="#">Estilistas</a></li>
-                <li><a href="#">News</a></li>
-            </ul>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Rotas -->
+            <div class="footer-column">
+                <h3>Rotas</h3>
+                <ul>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="#">Desfile</a></li>
+                    <li><a href="#">Estilistas</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+            <!-- Contato -->
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <p>Telefone: (11) 1234-5678</p>
+                <p>Email: contato@exemplo.com</p>
+                <p>Endereço: Rua Exemplo, 123, São Paulo, SP</p>
+            </div>
+            <!-- Mapa -->
+            <div class="footer-column">
+                <h3>Localização</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d888.7149743827646!2d-46.431801569948426!3d-23.495601141859165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce63dda7be6fb9%3A0xa74e7d5a53104311!2sSenac%20S%C3%A3o%20Miguel%20Paulista!5e0!3m2!1spt-BR!2sbr!4v1719259055913!5m2!1spt-BR!2sbr"
+                    width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
-        <!-- Contato -->
-        <div class="footer-column">
-            <h3>Contato</h3>
-            <p>Telefone: (11) 1234-5678</p>
-            <p>Email: contato@exemplo.com</p>
-            <p>Endereço: Rua Exemplo, 123, São Paulo, SP</p>
-        </div>
-        <!-- Mapa -->
-        <div class="footer-column">
-            <h3>Localização</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d888.7149743827646!2d-46.431801569948426!3d-23.495601141859165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce63dda7be6fb9%3A0xa74e7d5a53104311!2sSenac%20S%C3%A3o%20Miguel%20Paulista!5e0!3m2!1spt-BR!2sbr!4v1719259055913!5m2!1spt-BR!2sbr" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 
-    <script>
-        window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500); // Tempo para a transição de opacidade
-            }, 3000); // Duração de 3 segundos
-        });
-    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script>

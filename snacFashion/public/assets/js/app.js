@@ -1,3 +1,16 @@
+
+window.addEventListener('load', function() {
+    const preloader = document.querySelector('.preloader');
+    setTimeout(() => {
+        preloader.classList.add('hidden');
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }, 3000);
+});
+
+
+
 // btn-mais scroll
 $(document).ready(function() {
     $(".btn-mais").click(function(event) {

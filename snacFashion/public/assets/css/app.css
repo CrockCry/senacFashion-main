@@ -1,5 +1,18 @@
 /* app.css */
 
+/* barra de rolagem */
+*::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: black;
+  }
+
 
 h1 {
     font-size: 3rem !important;
@@ -133,7 +146,8 @@ header ul li a:hover {
 
 .btn-mais {
     position: absolute;
-    bottom: 20px; /* Ajuste conforme necessário */
+    bottom: 20px;
+    /* Ajuste conforme necessário */
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
@@ -142,16 +156,22 @@ header ul li a:hover {
 }
 
 .btn-mais img {
-    width: 40px; /* Ajuste o tamanho conforme necessário */
-    height: 40px; /* Ajuste o tamanho conforme necessário */
+    width: 40px;
+    /* Ajuste o tamanho conforme necessário */
+    height: 40px;
+    /* Ajuste o tamanho conforme necessário */
 }
 
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(-50%) translateY(0);
     }
+
     50% {
-        transform: translateX(-50%) translateY(-10px); /* Ajuste a altura do movimento conforme necessário */
+        transform: translateX(-50%) translateY(-10px);
+        /* Ajuste a altura do movimento conforme necessário */
     }
 }
 
@@ -205,7 +225,8 @@ header ul li a:hover {
     text-decoration: none;
     font-family: sans-serif;
     color: #fff;
-    z-index: 4; /* Aumentado para garantir que fique à frente */
+    z-index: 4;
+    /* Aumentado para garantir que fique à frente */
     position: relative;
 }
 
@@ -225,16 +246,39 @@ header ul li a:hover {
     height: 50vh;
     transform: translate(-50%, -50%);
     opacity: 0;
-    visibility: hidden; /* Adicionado para ocultar completamente */
-    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s; /* Adicionado delay para visibilidade */
+    visibility: hidden;
+    /* Adicionado para ocultar completamente */
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
+    /* Adicionado delay para visibilidade */
     z-index: 3;
 }
 
-.btn-stylist:hover + .img-artista,
-.btn-stylist:hover + .img-artista {
+.btn-stylist:hover+.img-artista,
+.btn-stylist:hover+.img-artista {
     opacity: 1;
-    visibility: visible; /* Torna visível quando em hover */
-    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s; /* Remove delay na visibilidade */
+    visibility: visible;
+    /* Torna visível quando em hover */
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s;
+    /* Remove delay na visibilidade */
+}
+
+.about {
+    margin: 50px 80px;
+}
+
+.about h1 {
+    font-family: "ff-good-headline-web-pro-com", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 3rem;
+
+}
+
+.about div p{
+    font-size: 3rem;
+    width: 65%;
+    font-family: "The-Seasons";
+
 }
 
 
@@ -295,7 +339,7 @@ header ul li a:hover {
 }
 
 .footer {
-    background-color: #333;
+    background-color: #000;
     color: #fff;
     padding: 20px 0;
     text-align: left;
