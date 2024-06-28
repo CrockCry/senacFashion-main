@@ -291,14 +291,14 @@ header ul li a:hover {
 
 .about div p{
     font-size: 2.5rem;
-    width: 55%;
+    width: 65%;
     font-family: "The-Seasons";
     margin: 0;
 }
 
 .parceria{
     display: flex;
-
+    justify-content: space-between;
 }
 
 .parceria p {

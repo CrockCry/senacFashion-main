@@ -146,7 +146,6 @@
                 </p>
                 <div class="parceria">
                     <img src="{{ asset('assets/img/ysl.png') }}" alt="">
-                    <p>x</p>
                     <img src="{{ asset('assets/img/senac.png') }}" alt="">
                 </div>
             </div>
