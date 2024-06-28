@@ -3,15 +3,15 @@
 /* barra de rolagem */
 *::-webkit-scrollbar {
     width: 5px;
-  }
+}
 
-  *::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: rgb(255, 255, 255);
-  }
+}
 
-  *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: black;
-  }
+}
 
 
 h1 {
@@ -263,19 +263,47 @@ header ul li a:hover {
     /* Remove delay na visibilidade */
 }
 
-.about{
-    background-color: #000;
+.about {
+
     display: flex;
     flex-direction: row;
+    background-image: url('../img/pre.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    /* Garante que o conteúdo do elemento pseudo fique dentro deste div */
+    overflow: hidden;
+    /* Evita que o fundo escurecido vaze para fora do elemento */
+
+}
+
+.about::after {
+    content: "";
+    /* Cria o pseudo-elemento */
+    position: absolute;
+    /* Posicionamento absoluto em relação ao elemento pai */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.863);
+    /* Cor preta com 50% de opacidade */
+    z-index: 1;
+    /* Garante que o pseudo-elemento fique atrás do conteúdo */
 }
 
 .about-container {
-    background-color: #000;
+
     margin: 50px 80px;
     color: #fff;
+    position: relative;
+    /* Garante que o conteúdo fique na frente do fundo escurecido */
+    z-index: 2;
+    /* Garante que o conteúdo fique na frente do pseudo-elemento */
 }
 
-.about-container div{
+.about-container div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -289,14 +317,14 @@ header ul li a:hover {
 
 }
 
-.about div p{
+.about div p {
     font-size: 2.5rem;
     width: 65%;
     font-family: "The-Seasons";
     margin: 0;
 }
 
-.parceria{
+.parceria {
     display: flex;
     justify-content: space-between;
 }
@@ -308,7 +336,7 @@ header ul li a:hover {
     font-family: sans-serif !important;
 }
 
-.parceria img{
+.parceria img {
     width: 15rem;
     height: 15rem;
 }
@@ -340,7 +368,7 @@ header ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.685);
+    background-color: rgba(0, 0, 0, 0.863);
     /* Cor preta com 50% de opacidade */
     z-index: 1;
     /* Garante que o pseudo-elemento fique atrás do conteúdo */
