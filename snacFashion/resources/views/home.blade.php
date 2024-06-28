@@ -135,15 +135,22 @@
 
     {{-- sobre --}}
     <div class="about">
-        <h1>Sobre</h1>
-        <div>
-            <p> A iniciativa do evento São Miguel Paulista Fashion Week é promovida pelo Senac – Instituição reconhecida
-                por seu compromisso com a educação de qualidade e a inovação.
-                Com a primeira edição, realizada em 2023, o evento celebra a moda por meio da inclusão,
-                sustentabilidade, diversidade e empreendedorismo no setor.
-            </p>
+        <div class="about-container">
+            <h1>Sobre</h1>
+            <div>
+                <p> A iniciativa do evento São Miguel Paulista Fashion Week é promovida pelo Senac – Instituição
+                    reconhecida
+                    por seu compromisso com a educação de qualidade e a inovação.
+                    Com a primeira edição, realizada em 2023, o evento celebra a moda por meio da inclusão,
+                    sustentabilidade, diversidade e empreendedorismo no setor.
+                </p>
+                <div class="parceria">
+                    <img src="{{ asset('assets/img/ysl.png') }}" alt="">
+                    <p>x</p>
+                    <img src="{{ asset('assets/img/senac.png') }}" alt="">
+                </div>
+            </div>
         </div>
-
     </div>
 
 
