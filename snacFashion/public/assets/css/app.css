@@ -71,6 +71,7 @@ header ul li a {
 
 header ul li a:hover {
     text-decoration: underline;
+    color: #fff;
 }
 
 .banner {
@@ -218,6 +219,12 @@ header ul li a:hover {
     text-transform: uppercase;
     font-size: 0.9rem;
     z-index: 2;
+}
+
+.stylist-tittle{
+    font-size: 1.7rem;
+    font-weight: 500;
+    font-family: "The-Seasons";
 }
 
 .btn-stylist {

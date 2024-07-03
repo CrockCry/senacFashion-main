@@ -70,7 +70,7 @@
     <header>
         <ul>
             <li><a href="{{ route('home') }}">Home</a></li>
-            <li><a href="#">News</a></li>
+            <li><a href="{{ route('desfile') }}">News</a></li>
             <li><a href="#">Estilistas</a></li>
             <li><a href="#">Contato</a></li>
         </ul>
@@ -100,6 +100,7 @@
                     alt="Endrik Souls">
                 <div class="stylist-overlay"></div>
                 <div class="stylist-content">
+                    <p class="stylist-tittle">Estilista</p>
                     <a href="#" class="btn-stylist">Endrik Souls</a>
                     <img class="img-artista" src="{{ asset('assets/img/artista.png') }}" alt="Imagem do Artista">
                 </div>
@@ -109,6 +110,7 @@
                     alt="Estilista 2">
                 <div class="stylist-overlay"></div>
                 <div class="stylist-content">
+                    <p class="stylist-tittle">Estilista</p>
                     <a href="#" class="btn-stylist">Jully Sult</a>
                     <img class="img-artista" src="{{ asset('assets/img/artista.png') }}" alt="Imagem do Artista">
                 </div>
@@ -117,9 +119,11 @@
                 <img class="d-block w-100 stylist-banner" src="{{ asset('assets/img/5.jpeg') }}" alt="Estilista 3">
                 <div class="stylist-overlay"></div>
                 <div class="stylist-content">
+                    <p class="stylist-tittle">Estilista</p>
                     <a href="#" class="btn-stylist">Gregory Canot</a>
                     <img class="img-artista" src="{{ asset('assets/img/artista.png') }}" alt="Imagem do Artista">
                 </div>
+
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

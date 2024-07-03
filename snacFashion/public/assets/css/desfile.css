@@ -1,0 +1,35 @@
+.sobre-desfile {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.sobre-desfile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.desfile-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.desfile-info h2 {
+    font-size: 2rem;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.desfile-info .desfile-data {
+    font-size: 1.2rem;
+    color: #777;
+}
+
+.desfile-descricao {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    font-family: sans-serif;
+}
