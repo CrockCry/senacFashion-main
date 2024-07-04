@@ -27,3 +27,31 @@ $(document).ready(function() {
         }
     });
 });
+
+
+// galeria
+    document.addEventListener('DOMContentLoaded', function () {
+        let fotos = document.querySelectorAll('.foto-figurino');
+        let verMaisBtn = document.getElementById('ver-mais-btn');
+        let fotosVisiveis = 6;
+
+        // Mostrar as primeiras 6 fotos
+        for (let i = 0; i < fotosVisiveis; i++) {
+            fotos[i].classList.add('show');
+        }
+
+        verMaisBtn.addEventListener('click', function () {
+            let novasFotosVisiveis = fotosVisiveis + 6;
+            for (let i = fotosVisiveis; i < novasFotosVisiveis; i++) {
+                if (fotos[i]) {
+                    fotos[i].classList.add('show');
+                }
+            }
+            fotosVisiveis = novasFotosVisiveis;
+
+            // Se todas as fotos estiverem visíveis, ocultar o botão "Ver mais"
+            if (fotosVisiveis >= fotos.length) {
+                verMaisBtn.style.display = 'none';
+            }
+        });
+    });

@@ -20,7 +20,7 @@
 
 <body>
     {{-- cabeçalho --}}
-    <header>
+    <header id="main-header">
         <ul>
             <li><a href="{{ route('home') }}">Home</a></li>
             <li><a href="{{ route('desfile') }}">News</a></li>
@@ -44,19 +44,116 @@
         </a>
     </div>
 
-    <section class="sobre-desfile">
-        <div class="sobre-desfile-container">
+    <section id="sobre-desfile" class="sobre-desfile">
+        <div  class="sobre-desfile-container">
             <div class="desfile-info">
                 <h2>Título do Desfile</h2>
                 <p class="desfile-data">Data: 01/01/2023</p>
             </div>
             <p class="desfile-descricao">
+                <span>campo dedidcado para descrição detalhada do evento</span>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat.
             </p>
         </div>
     </section>
+
+    <!-- Galeria de Figurinos -->
+    <section id="galeria-figurinos" class="galeria-figurinos">
+        <div class="galeria-container">
+            <h2>Figurinos</h2>
+            <div class="galeria-fotos">
+                <!-- Fotos de teste -->
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig3.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div  class="foto-container">
+                    <img src="{{ asset('assets/img/fig4.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig5.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig3.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig4.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig5.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+                <div class="foto-container">
+                    <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                    <div class="info-card">
+                        <p>Estilista: Nome Estilista</p>
+                        <p>Modelo: Nome Modelo</p>
+                    </div>
+                </div>
+            </div>
+            <button id="ver-mais-btn" class="ver-mais-btn">Ver mais</button>
+        </div>
+    </section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -92,6 +189,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{ asset('assets/js/desfile.js') }}"></script>
     <script>
         AOS.init();
     </script>
