@@ -52,6 +52,7 @@ header.scrolled {
 .galeria-figurinos {
     padding: 50px 0;
     background-color: #f0f0f0;
+    text-align: center;
 }
 
 .galeria-container {
@@ -73,7 +74,7 @@ header.scrolled {
 
 .foto-container {
     position: relative;
-    width: 30%;
+    width: 100%;
     margin-bottom: 20px;
     overflow: hidden; /* Para garantir que o card não ultrapasse a borda da imagem */
 }

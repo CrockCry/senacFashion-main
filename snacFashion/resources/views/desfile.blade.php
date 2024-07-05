@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion Show</title>
+    <link rel="shortcut icon" href="{{ asset('assets/img/icon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/desfile.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,12 +22,28 @@
 <body>
     {{-- cabeçalho --}}
     <header id="main-header">
-        <ul>
-            <li><a href="{{ route('home') }}">Home</a></li>
-            <li><a href="{{ route('desfile') }}">News</a></li>
-            <li><a href="#">Estilistas</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/img/ysl.png') }}" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('desfile') }}">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Estilistas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
     {{-- banner --}}
     <div class="banner">
@@ -45,7 +62,7 @@
     </div>
 
     <section id="sobre-desfile" class="sobre-desfile">
-        <div  class="sobre-desfile-container">
+        <div class="sobre-desfile-container">
             <div class="desfile-info">
                 <h2>Título do Desfile</h2>
                 <p class="desfile-data">Data: 01/01/2023</p>
@@ -61,92 +78,116 @@
 
     <!-- Galeria de Figurinos -->
     <section id="galeria-figurinos" class="galeria-figurinos">
-        <div class="galeria-container">
+        <div class="container">
             <h2>Figurinos</h2>
-            <div class="galeria-fotos">
+            <div class="row galeria-fotos">
                 <!-- Fotos de teste -->
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig3.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig3.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div  class="foto-container">
-                    <img src="{{ asset('assets/img/fig4.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig4.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig5.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig5.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig3.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig3.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig4.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig4.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig5.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig5.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="foto-container">
-                    <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                    <div class="info-card">
-                        <p>Estilista: Nome Estilista</p>
-                        <p>Modelo: Nome Modelo</p>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="foto-container">
+                        <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
+                        <div class="info-card">
+                            <p>Estilista: Nome Estilista</p>
+                            <p>Modelo: Nome Modelo</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -156,36 +197,35 @@
 
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Rotas -->
-            <div class="footer-column">
-                <h3>Rotas</h3>
-                <ul>
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="#">Desfile</a></li>
-                    <li><a href="#">Estilistas</a></li>
-                    <li><a href="#">News</a></li>
-                </ul>
+    <footer class="footer text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Contatos</h5>
+                    <p>Endereço: Rua Exemplo, 123</p>
+                    <p>Email: exemplo@fashion.com</p>
+                    <p>Telefone: (11) 1234-5678</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Siga-nos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Facebook</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                        <li><a href="#" class="text-white">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Localização</h5>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d144.95373531531875!3d-37.816279779751955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727ebed14891b1!2sGoogle%20Australia!5e0!3m2!1sen!2sau!4v1614114578277!5m2!1sen!2sau" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-            <!-- Contato -->
-            <div class="footer-column">
-                <h3>Contato</h3>
-                <p>Telefone: (11) 1234-5678</p>
-                <p>Email: contato@exemplo.com</p>
-                <p>Endereço: Rua Exemplo, 123, São Paulo, SP</p>
-            </div>
-            <!-- Mapa -->
-            <div class="footer-column">
-                <h3>Localização</h3>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d888.7149743827646!2d-46.431801569948426!3d-23.495601141859165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce63dda7be6fb9%3A0xa74e7d5a53104311!2sSenac%20S%C3%A3o%20Miguel%20Paulista!5e0!3m2!1spt-BR!2sbr!4v1719259055913!5m2!1spt-BR!2sbr"
-                    width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="text-center py-3">
+                &copy; 2023 Fashion Show. Todos os direitos reservados.
             </div>
         </div>
     </footer>
-
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>

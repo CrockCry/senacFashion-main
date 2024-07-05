@@ -15,7 +15,7 @@
 
 
 h1 {
-    font-size: 3rem !important;
+    font-size: 3rem;
     font-family: sans-serif;
     font-style: normal;
 }
@@ -44,34 +44,54 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1.5rem 0;
-    text-align: center;
-    /* background-color: rgba(0, 0, 0, 0.219); Background transparente */
+    padding: .5rem 2rem;
     z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
-header ul {
-    list-style: none;
-    margin: 0;
+.navbar {
     padding: 0;
 }
 
-header ul li {
-    display: inline;
-    margin: 0 15px;
+.navbar-brand img{
+    width: 5rem;
 }
 
-header ul li a {
-    text-decoration: none;
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba(255, 255, 255, 0.8)" stroke-width="2" linecap="round" linejoin="round" d="M4 7h22M4 15h22M4 23h22"%3E%3C/path%3E%3C/svg%3E') !important;
+}
+
+.navbar-nav .nav-link {
     color: #fff;
-    font-family: sans-serif;
-    font-size: .9rem;
     text-transform: uppercase;
 }
 
-header ul li a:hover {
-    text-decoration: underline;
-    color: #fff;
+.navbar-nav .nav-link:hover {
+    color: #ccc;
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 1rem;
+    }
+}
+
+.navbar-light .navbar-brand {
+    color: rgb(255, 255, 255) !important;
+}
+
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(255, 255, 255) !important;
 }
 
 .banner {
@@ -88,7 +108,6 @@ header ul li a:hover {
 }
 
 .banner-content {
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -97,6 +116,12 @@ header ul li a:hover {
     text-align: center;
     z-index: 2;
 }
+
+.banner-content h1{
+    font-size: 2.5rem;
+}
+
+
 
 .subTitleBanner {
     margin-top: 18px;
@@ -405,10 +430,11 @@ header ul li a:hover {
 }
 
 .footer {
-    background-color: #000;
-    color: #fff;
     padding: 20px 0;
-    text-align: left;
+}
+
+.footer h5 {
+    margin-bottom: 20px;
 }
 
 .footer-container {
@@ -424,31 +450,34 @@ header ul li a:hover {
     margin: 10px;
 }
 
-.footer-column h3 {
+.footer h3 {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-.footer-column ul {
+.footer ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-column ul li {
-    margin-bottom: 20px;
+.footer ul li {
+    margin-bottom: 10px;
 }
 
-.footer-column ul li a {
+.footer ul li a {
     text-decoration: none;
-    color: #fff;
     transition: color 0.3s;
     padding: 5px 0;
 }
 
-.footer-column ul li a:hover {
+.footer ul li a:hover {
     color: #ddd;
 }
 
-.footer-column p {
+.footer p {
     margin: 5px 0;
+}
+
+.footer .embed-responsive {
+    margin-bottom: 20px;
 }
