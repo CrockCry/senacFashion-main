@@ -23,8 +23,10 @@
     {{-- cabeçalho --}}
     <header id="main-header">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/img/ysl.png') }}" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/img/ysl.png') }}"
+                    alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -36,7 +38,7 @@
                         <a class="nav-link" href="{{ route('desfile') }}">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Estilistas</a>
+                        <a class="nav-link" href="{{ route('estilista') }}">Estilistas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contato</a>
@@ -195,6 +197,12 @@
         </div>
     </section>
 
+    {{-- contato --}}
+    <div class="contato">
+        <p>Faça parte da revolução</p>
+        <a href="#"></a>
+    </div>
+
 
     <!-- Footer -->
     <footer class="footer text-white">
@@ -217,7 +225,9 @@
                 <div class="col-md-4 mb-4">
                     <h5>Localização</h5>
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d144.95373531531875!3d-37.816279779751955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727ebed14891b1!2sGoogle%20Australia!5e0!3m2!1sen!2sau!4v1614114578277!5m2!1sen!2sau" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d144.95373531531875!3d-37.816279779751955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727ebed14891b1!2sGoogle%20Australia!5e0!3m2!1sen!2sau!4v1614114578277!5m2!1sen!2sau"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

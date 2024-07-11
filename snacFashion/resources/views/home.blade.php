@@ -83,7 +83,7 @@
                         <a class="nav-link" href="{{ route('desfile') }}">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Estilistas</a>
+                        <a class="nav-link" href="{{ route('estilista') }}">Estilistas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contato</a>
