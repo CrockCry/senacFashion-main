@@ -23,7 +23,7 @@
     {{-- cabeçalho --}}
     <header id="main-header">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/img/SMPFW-Logo-2.png') }}"
+            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/img/logo4.png') }}"
                     alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

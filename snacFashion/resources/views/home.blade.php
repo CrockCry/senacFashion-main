@@ -64,13 +64,13 @@
 <body>
     <div class="preloader">
         <img src="{{ asset('assets/vid/PreLoadingFinal.gif') }}" alt="Preload Background" class="preload-image">
-        <img src="{{ asset('assets/img/SMPFW-Logo-2.png') }}" alt="Logo" class="preload-logo">
+        <img src="{{ asset('assets/img/logo4.png') }}" alt="Logo" class="preload-logo">
     </div>
 
     {{-- cabeçalho --}}
     <header id="main-header">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#"><img src="{{ asset('assets/img/SMPFW-Logo-2.png') }}" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="{{ asset('assets/img/logo4.png') }}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -166,7 +166,7 @@
                     sustentabilidade, diversidade e empreendedorismo no setor.
                 </p>
                 <div class="parceria">
-                    <img src="{{ asset('assets/img/SMPFW-Logo-2.png') }}" alt="">
+                    <img src="{{ asset('assets/img/logo4.png') }}" alt="">
                     <img src="{{ asset('assets/img/senac.png') }}" alt="">
                 </div>
             </div>
