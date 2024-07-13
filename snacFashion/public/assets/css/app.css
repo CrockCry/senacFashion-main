@@ -299,7 +299,7 @@ header {
 
     display: flex;
     flex-direction: row;
-    background-image: url('../img/pre.png');
+    background-image: url('../vid/PreLoadingFinal.gif');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -375,7 +375,7 @@ header {
 
 
 .contato {
-    background-image: url('../img/pre.png');
+    background-image: url('../vid/PreLoadingFinal.gif');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
