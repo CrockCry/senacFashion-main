@@ -48,155 +48,59 @@
         </nav>
     </header>
     {{-- banner --}}
-    <div class="banner">
-        <video autoplay muted loop>
-            <source src="{{ asset('assets/vid/desfile1.mp4') }}" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-        <div class="stylist-overlay"></div>
-        <div class="banner-content">
-            <h1 data-aos="fade-up" data-aos-duration="1000">TITULO EVENTO: X</h1>
-            <p data-aos="zoom-in" data-aos-duration="1500" class="subTitleBanner">Ambição de poder</p>
-        </div>
-        <a class="btn-mais" href="#sobre-desfile">
-            <img src="{{ asset('assets/img/arrow.png') }}" alt="Arrow Icon">
-        </a>
-    </div>
-
-    <section id="sobre-desfile" class="sobre-desfile">
-        <div class="sobre-desfile-container">
-            <div class="desfile-info">
-                <h2>Título do Desfile</h2>
-                <p class="desfile-data">Data: 01/01/2023</p>
+    @foreach ($desfiles as $desfile)
+        <div class="banner">
+            <video autoplay muted loop>
+                <source src="{{ asset('assets/vid/' . $desfile->banner_desfile) }}" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div class="stylist-overlay"></div>
+            <div class="banner-content">
+                <h1 data-aos="fade-up" data-aos-duration="1000">{{ $desfile->titulo_desfile }}</h1>
+                <p data-aos="zoom-in" data-aos-duration="1500" class="subTitleBanner">{{ $desfile->subtitulo_desfile }}
+                </p>
             </div>
-            <p class="desfile-descricao">
-                <span>campo dedidcado para descrição detalhada do evento</span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
-            </p>
+            <a class="btn-mais" href="#sobre-desfile">
+                <img src="{{ asset('assets/img/arrow.png') }}" alt="Arrow Icon">
+            </a>
         </div>
-    </section>
 
-    <!-- Galeria de Figurinos -->
-    <section id="galeria-figurinos" class="galeria-figurinos">
-        <div class="container">
-            <h2>Figurinos</h2>
-            <div class="row galeria-fotos">
-                <!-- Fotos de teste -->
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
+        <section id="sobre-desfile" class="sobre-desfile">
+            <div class="sobre-desfile-container">
+                <div class="desfile-info">
+                    <h2>{{ $desfile->titulo_desfile }}</h2>
+                    <p class="desfile-data">Data: {{ \Carbon\Carbon::parse($desfile->data_desfile)->format('d/m/Y') }}
+                    </p>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig3.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig4.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig5.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig3.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig4.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig5.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig1.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="foto-container">
-                        <img src="{{ asset('assets/img/fig2.jpeg') }}" alt="Figurino 1" class="foto-figurino">
-                        <div class="info-card">
-                            <p>Estilista: Nome Estilista</p>
-                            <p>Modelo: Nome Modelo</p>
-                        </div>
-                    </div>
-                </div>
+                <p class="desfile-descricao">
+                    {{ $desfile->sobre_desfile }}
+                </p>
             </div>
-            <button id="ver-mais-btn" class="ver-mais-btn">Ver mais</button>
-        </div>
-    </section>
+        </section>
 
+        <!-- Galeria de Figurinos -->
+        <section id="galeria-figurinos" class="galeria-figurinos">
+            <div class="container">
+                <h2>Figurinos</h2>
+                <div class="row galeria-fotos">
+                    @foreach ($desfile->fotos as $foto)
+                        <!-- Fotos de teste -->
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="foto-container">
+                                <img src="{{ asset('assets/img/modelos/'.$foto->foto_desfile) }}" alt="Figurino 1"
+                                    class="foto-figurino">
+                                <div class="info-card">
+                                    <p>Estilista: Nome Estilista</p>
+                                    <p>Modelo: Nome Modelo</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <button id="ver-mais-btn" class="ver-mais-btn">Ver mais</button>
+            </div>
+        </section>
+    @endforeach
     {{-- contato --}}
     <div class="contato">
         <p>Faça parte da revolução</p>
