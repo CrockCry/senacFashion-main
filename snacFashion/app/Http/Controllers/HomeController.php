@@ -12,6 +12,7 @@ class HomeController extends Controller
     {
         $banner = Home::first();
         $estilistas = Estilista::take(3)->get();
+        $estilistas = Estilista::where('status', 1)->get();
 
         return view('home', compact('banner', 'estilistas'));
     }

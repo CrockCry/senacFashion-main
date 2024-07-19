@@ -9,7 +9,5 @@ class Home extends Model
 {
     protected $table = 'tblhome';
 
-    protected $fillable = [
-        'banner_path',
-    ];
+    protected $fillable = ['banner_path', 'status'];
 }
