@@ -116,11 +116,11 @@
             @foreach ($estilistas as $index => $estilista)
                 <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                     <img class="d-block w-100 stylist-banner parallax"
-                        src="{{ asset('assets/img/' . $estilista->imagem_path) }}" alt="Endrik Souls">
+                        src="{{ asset('assets/img/'.$estilista->imagem_path) }}" alt="Endrik Souls">
                     <div class="stylist-overlay"></div>
                     <div class="stylist-content">
                         <p class="stylist-tittle">Estilista</p>
-                        <a href="#" class="btn-stylist">Endrik Souls</a>
+                        <a href="#" class="btn-stylist">{{ $estilista->nome }}</a>
                         <img class="img-artista" src="{{ asset('assets/img/artista.png') }}" alt="Imagem do Artista">
                     </div>
                 </div>
