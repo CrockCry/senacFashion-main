@@ -32,12 +32,16 @@ class DashController extends Controller
     public function storeBanner(Request $request)
     {
         $request->validate([
-            'banner_path' => 'required',
+            'banner_path' => 'required|mimes:mp4,avi,mov',
+            'status' => 'required|boolean'
         ]);
 
-        Home::create($request->all());
+        Home::create([
+            'banner_path' => $request->file('banner_path')->store('banners', 'public'),
+            'status' => $request->input('status')
+        ]);
 
-        return redirect()->route('dashboard.index')->with('success', 'Banner adicionado com sucesso');
+        return redirect()->route('dashboard.index')->with('success', 'Banner criado com sucesso.');
     }
 
     public function editBanner($id)
@@ -88,14 +92,14 @@ class DashController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nome' => 'required',
-            'imagem_path' => 'required',
+            'banner_path' => 'required|mimes:mp4,avi,mov',
+            'status' => 'required|boolean'
         ]);
 
         Estilista::create($request->all());
 
         return redirect()->route('dashboard.index')
-                        ->with('success', 'Estilista criado com sucesso.');
+            ->with('success', 'Estilista criado com sucesso.');
     }
 
     public function edit($id)
@@ -115,7 +119,7 @@ class DashController extends Controller
         $estilista->update($request->all());
 
         return redirect()->route('dashboard.index')
-                        ->with('success', 'Estilista atualizado com sucesso.');
+            ->with('success', 'Estilista atualizado com sucesso.');
     }
 
     public function destroy($id)
@@ -124,7 +128,7 @@ class DashController extends Controller
         $estilista->delete();
 
         return redirect()->route('dashboard.index')
-                        ->with('success', 'Estilista deletado com sucesso.');
+            ->with('success', 'Estilista deletado com sucesso.');
     }
 
     public function toggleStatus($id)
@@ -134,7 +138,7 @@ class DashController extends Controller
         $estilista->save();
 
         return redirect()->route('dashboard.index')
-                        ->with('success', 'Status do estilista atualizado com sucesso.');
+            ->with('success', 'Status do estilista atualizado com sucesso.');
     }
 
     //Edição Estilista - FIM
