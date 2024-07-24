@@ -13,22 +13,11 @@ class Desfile extends Model
     protected $table = 'tbldesfile';
 
     protected $fillable = [
-        'banner_desfile',
-        'titulo_desfile',
-        'subtitulo_desfile',
-        'sobre_desfile',
-        'data_desfile',    ];
+        'titulo', 'subtitulo', 'data_evento', 'sobre_evento', 'banner_path', 'status'
+    ];
 
     public function fotos()
     {
         return $this->hasMany(FotoDesfile::class, 'id_desfile');
     }
-
-    protected $dates = ['data_desfile'];
-
-    public function getDataDesfileAttribute($value)
-    {
-        return Carbon::parse($value);
-    }
-
 }

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Adicionar Banner</h1>
+        <h1>Adicionar Foto ao Desfile</h1>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -14,20 +14,20 @@
             </div>
         @endif
 
-        <form action="{{ route('dashboard.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('dashboard.storeFotoDesfile', $desfileId) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="banner_path">Banner:</label>
-                <input type="file" name="banner_path" id="banner_path" class="form-control">
+                <label for="foto_path">Foto</label>
+                <input type="file" class="form-control" id="foto_path" name="foto_path" required>
             </div>
             <div class="form-group">
-                <label for="status">Status:</label>
-                <select name="status" id="status" class="form-control">
+                <label for="status">Status</label>
+                <select class="form-control" id="status" name="status" required>
                     <option value="1">Ativo</option>
                     <option value="0">Inativo</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Adicionar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
     </div>
 @endsection

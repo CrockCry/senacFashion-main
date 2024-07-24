@@ -12,8 +12,7 @@ class FotoDesfile extends Model
     protected $table = 'tblfotos_desfile';
 
     protected $fillable = [
-        'id_desfile',
-        'foto_desfile',
+        'desfile_id', 'foto_path', 'status'
     ];
 
     public function desfile()

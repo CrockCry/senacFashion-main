@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Adicionar Banner</h1>
+        <h1>Adicionar Estilista</h1>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -14,11 +14,15 @@
             </div>
         @endif
 
-        <form action="{{ route('dashboard.storeBanner') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('dashboard.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="banner_path">Banner:</label>
-                <input type="file" name="banner_path" id="banner_path" class="form-control">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="imagem_path">Imagem:</label>
+                <input type="file" name="imagem_path" id="imagem_path" class="form-control">
             </div>
             <div class="form-group">
                 <label for="status">Status:</label>
