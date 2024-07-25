@@ -13,7 +13,7 @@ class Desfile extends Model
     protected $table = 'tbldesfile';
 
     protected $fillable = [
-        'titulo', 'subtitulo', 'data_evento', 'sobre_evento', 'banner_path', 'status'
+        'banner_desfile', 'titulo_desfile', 'subtitulo_desfile', 'sobre_desfile', 'data_desfile', 'status'
     ];
 
     public function fotos()

@@ -48,37 +48,11 @@
 
 @section('content')
     <div class="container">
-        <h1>Dashboard</h1>
-
-        <h2>Estilistas</h2>
-        <a href="{{ route('dashboard.estilista.create') }}" class="btn btn-success">Adicionar Estilista</a>
-        @foreach($estilistas as $estilista)
-            <div class="card mt-2">
-                <img class="card-img-top" src="{{ asset('storage/' . $estilista->imagem_path) }}" alt="Imagem">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $estilista->nome }}</h5>
-                    <form action="{{ route('dashboard.toggleStatus', $estilista->id) }}" method="POST" class="d-inline">
-                        @csrf
-                        @method('PUT')
-                        <button type="submit" class="btn btn-{{ $estilista->status ? 'danger' : 'success' }}">
-                            {{ $estilista->status ? 'Desativar' : 'Ativar' }}
-                        </button>
-                    </form>
-                    <a href="{{ route('dashboard.estilista.edit', $estilista->id) }}" class="btn btn-warning">Editar</a>
-                    <form action="{{ route('dashboard.destroy', $estilista->id) }}" method="POST" class="d-inline">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                    </form>
-                </div>
-            </div>
-        @endforeach
-
         <h2>Banners</h2>
         <a href="{{ route('dashboard.bannerHome.createBanner') }}" class="btn btn-success">Adicionar Banner</a>
-        @foreach($banners as $banner)
-            <div class="card mt-2">
-                <img class="card-img-top" src="{{ asset('storage/' . $banner->imagem_path) }}" alt="Banner">
+        @foreach ($banners as $banner)
+            <div class="card mt-2" style="display: flex; flex-direction: row">
+                {{-- <img class="card-img-top" src="{{ asset('storage/' . $banner->imagem_path) }}" alt="Banner"> --}}
                 <div class="card-body">
                     <h5 class="card-title">{{ $banner->titulo }}</h5>
                     <form action="{{ route('dashboard.toggleStatusBanner', $banner->id) }}" method="POST" class="d-inline">
@@ -98,22 +72,25 @@
             </div>
         @endforeach
 
-        <h2>Desfiles</h2>
-        <a href="{{ route('dashboard.createDesfile') }}" class="btn btn-success">Adicionar Desfile</a>
-        @foreach($desfiles as $desfile)
-            <div class="card mt-2">
-                <img class="card-img-top" src="{{ asset('storage/' . $desfile->banner_path) }}" alt="Banner do Desfile">
+        <h1>Dashboard</h1>
+
+        <h2>Estilistas</h2>
+        <a href="{{ route('dashboard.estilista.create') }}" class="btn btn-success">Adicionar Estilista</a>
+        @foreach ($estilistas as $estilista)
+            <div class="card mt-2" style="display: flex; flex-direction: row">
+                <img class="card-img-top" src="{{ asset('assets/img/' . $estilista->imagem_path) }}" alt="Imagem"
+                    style="width: 35%">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $desfile->titulo }}</h5>
-                    <form action="{{ route('dashboard.toggleStatusDesfile', $desfile->id) }}" method="POST" class="d-inline">
+                    <h5 class="card-title">{{ $estilista->nome }}</h5>
+                    <form action="{{ route('dashboard.toggleStatus', $estilista->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('PUT')
-                        <button type="submit" class="btn btn-{{ $desfile->status ? 'danger' : 'success' }}">
-                            {{ $desfile->status ? 'Desativar' : 'Ativar' }}
+                        <button type="submit" class="btn btn-{{ $estilista->status ? 'danger' : 'success' }}">
+                            {{ $estilista->status ? 'Desativar' : 'Ativar' }}
                         </button>
                     </form>
-                    <a href="{{ route('dashboard.editDesfile', $desfile->id) }}" class="btn btn-warning">Editar</a>
-                    <form action="{{ route('dashboard.destroyDesfile', $desfile->id) }}" method="POST" class="d-inline">
+                    <a href="{{ route('dashboard.estilista.edit', $estilista->id) }}" class="btn btn-warning">Editar</a>
+                    <form action="{{ route('dashboard.destroy', $estilista->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Excluir</button>

@@ -7,7 +7,7 @@ use App\Models\Estilista;
 use App\Models\Home;
 use App\Models\Desfile;
 use App\Models\FotoDesfile;
-
+use Illuminate\Support\Facades\Storage;
 class DashController extends Controller
 {
     // Edição Estilista - INICIO
@@ -17,11 +17,8 @@ class DashController extends Controller
         $banners = Home::all();
         $desfiles = Desfile::all(); // Adiciona esta linha para buscar todos os desfiles
         return view('dashboard.index', compact('estilistas', 'banners', 'desfiles'));
-
     }
-
     //Edição Estilista - INICIO
-
     public function create()
     {
         return view('dashboard.estilista.create');
@@ -112,6 +109,18 @@ class DashController extends Controller
         return view('dashboard.bannerHome.createBanner');
     }
 
+    public function showHome()
+    {
+        // Busca o banner ativo
+        $banner = Home::where('status', 1)->first();
+
+        // Busca estilistas
+        $estilistas = Estilista::all();
+
+        // Passa os dados para a view
+        return view('home', compact('banner', 'estilistas'));
+    }
+
     public function storeBanner(Request $request)
     {
         $request->validate([
@@ -181,27 +190,37 @@ class DashController extends Controller
         return view('dashboard.createDesfile');
     }
 
+    public function showDesfiles()
+{
+    // Busca desfiles ativos
+    $desfiles = Desfile::where('status', 1)->get();
+
+    // Passa os desfiles ativos para a view
+    return view('desfile', compact('desfiles'));
+}
+
+
     public function storeDesfile(Request $request)
     {
         $request->validate([
-            'titulo' => 'required',
-            'subtitulo' => 'required',
-            'data_evento' => 'required|date',
-            'sobre_evento' => 'required',
-            'banner_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'banner_desfile' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'titulo_desfile' => 'required',
+            'subtitulo_desfile' => 'required',
+            'sobre_desfile' => 'required',
+            'data_desfile' => 'required|date',
             'status' => 'required|boolean'
         ]);
 
         Desfile::create([
-            'titulo' => $request->input('titulo'),
-            'subtitulo' => $request->input('subtitulo'),
-            'data_evento' => $request->input('data_evento'),
-            'sobre_evento' => $request->input('sobre_evento'),
-            'banner_path' => $request->file('banner_path')->store('desfile_banners', 'public'),
+            'banner_desfile' => $request->input('banner_desfile'),
+            'titulo_desfile' => $request->input('titulo_desfile'),
+            'subtitulo_desfile' => $request->input('subtitulo_desfile'),
+            'sobre_desfile' => $request->input('sobre_desfile'),
+            'data_desfile' => $request->input('data_desfile'),
             'status' => $request->input('status')
         ]);
 
-        return redirect()->route('dashboard.index')->with('success', 'Desfile criado com sucesso.');
+        return redirect()->route('dashboard.news')->with('success', 'Desfile criado com sucesso.');
     }
 
     public function editDesfile($id)
@@ -210,43 +229,46 @@ class DashController extends Controller
         return view('dashboard.editDesfile', compact('desfile'));
     }
 
-    public function updateDesfile(Request $request, $id)
-    {
-        $request->validate([
-            'titulo' => 'required',
-            'subtitulo' => 'required',
-            'data_evento' => 'required|date',
-            'sobre_evento' => 'required',
-            'banner_path' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'status' => 'required|boolean'
-        ]);
+public function updateDesfile(Request $request, $id)
+{
+    $request->validate([
+        'banner_desfile' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'titulo_desfile' => 'required',
+        'subtitulo_desfile' => 'required',
+        'sobre_desfile' => 'required',
+        'data_desfile' => 'required|date',
+        'status' => 'required|boolean'
+    ]);
 
-        $desfile = Desfile::find($id);
+    $desfile = Desfile::find($id);
 
-        if ($request->hasFile('banner_path')) {
-            $bannerPath = $request->file('banner_path')->store('desfile_banners', 'public');
-        } else {
-            $bannerPath = $desfile->banner_path;
-        }
-
-        $desfile->update([
-            'titulo' => $request->input('titulo'),
-            'subtitulo' => $request->input('subtitulo'),
-            'data_evento' => $request->input('data_evento'),
-            'sobre_evento' => $request->input('sobre_evento'),
-            'banner_path' => $bannerPath,
-            'status' => $request->input('status')
-        ]);
-
-        return redirect()->route('dashboard.index')->with('success', 'Desfile atualizado com sucesso.');
+    if ($request->hasFile('banner_desfile')) {
+        // Salvar a imagem na pasta public/assets/img
+        $bannerFile = $request->file('banner_desfile');
+        $bannerPath = $bannerFile->storeAs('public/assets/img', $bannerFile->getClientOriginalName());
+        $bannerPath = str_replace('public/assets/img/', '', $bannerPath);
+    } else {
+        $bannerPath = $desfile->banner_desfile;
     }
+
+    $desfile->update([
+        'banner_desfile' => $bannerPath,
+        'titulo_desfile' => $request->input('titulo_desfile'),
+        'subtitulo_desfile' => $request->input('subtitulo_desfile'),
+        'sobre_desfile' => $request->input('sobre_desfile'),
+        'data_desfile' => $request->input('data_desfile'),
+        'status' => $request->input('status')
+    ]);
+
+    return redirect()->route('dashboard.news')->with('success', 'Desfile atualizado com sucesso.');
+}
 
     public function destroyDesfile($id)
     {
         $desfile = Desfile::find($id);
         $desfile->delete();
 
-        return redirect()->route('dashboard.index')->with('success', 'Desfile deletado com sucesso.');
+        return redirect()->route('dashboard.news')->with('success', 'Desfile deletado com sucesso.');
     }
 
     public function toggleStatusDesfile($id)
@@ -255,7 +277,7 @@ class DashController extends Controller
         $desfile->status = !$desfile->status;
         $desfile->save();
 
-        return redirect()->route('dashboard.index')->with('success', 'Status do desfile atualizado com sucesso');
+        return redirect()->route('dashboard.news')->with('success', 'Status do desfile atualizado com sucesso');
     }
 
     // Edição Fotos Desfile - INICIO
@@ -265,20 +287,24 @@ class DashController extends Controller
     }
 
     public function storeFotoDesfile(Request $request, $desfileId)
-    {
-        $request->validate([
-            'foto_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'status' => 'required|boolean'
-        ]);
+{
+    $request->validate([
+        'foto_desfile' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'status' => 'required|boolean'
+    ]);
 
-        FotoDesfile::create([
-            'id_desfile' => $desfileId,
-            'foto_path' => $request->file('foto_path')->store('desfile_fotos', 'public'),
-            'status' => $request->input('status')
-        ]);
+    $fotoFile = $request->file('foto_desfile');
+    $fotoPath = $fotoFile->storeAs('public/assets/img/modelos', $fotoFile->getClientOriginalName());
+    $fotoPath = str_replace('public/assets/img/modelos/', '', $fotoPath);
 
-        return redirect()->route('dashboard.editDesfile', ['id' => $desfileId])->with('success', 'Foto adicionada com sucesso.');
-    }
+    FotoDesfile::create([
+        'id_desfile' => $desfileId,
+        'foto_desfile' => $fotoPath,
+        'status' => $request->input('status')
+    ]);
+
+    return redirect()->route('dashboard.editDesfile', ['id' => $desfileId])->with('success', 'Foto adicionada com sucesso.');
+}
 
     public function editFotoDesfile($id)
     {
@@ -289,25 +315,29 @@ class DashController extends Controller
     public function updateFotoDesfile(Request $request, $id)
     {
         $request->validate([
-            'foto_path' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'foto_desfile' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'status' => 'required|boolean'
         ]);
 
         $fotoDesfile = FotoDesfile::find($id);
 
-        if ($request->hasFile('foto_path')) {
-            $fotoPath = $request->file('foto_path')->store('desfile_fotos', 'public');
+        if ($request->hasFile('foto_desfile')) {
+            // Salvar a imagem na pasta public/assets/img/modelos
+            $fotoFile = $request->file('foto_desfile');
+            $fotoPath = $fotoFile->storeAs('public/assets/img/modelos', $fotoFile->getClientOriginalName());
+            $fotoPath = str_replace('public/assets/img/modelos/', '', $fotoPath);
         } else {
-            $fotoPath = $fotoDesfile->foto_path;
+            $fotoPath = $fotoDesfile->foto_desfile;
         }
 
         $fotoDesfile->update([
-            'foto_path' => $fotoPath,
+            'foto_desfile' => $fotoPath,
             'status' => $request->input('status')
         ]);
 
         return redirect()->route('dashboard.editDesfile', ['id' => $fotoDesfile->id_desfile])->with('success', 'Foto atualizada com sucesso.');
     }
+
 
     public function destroyFotoDesfile($id)
     {
@@ -331,7 +361,9 @@ class DashController extends Controller
     // Página de News
     public function news()
     {
-        // Lógica para carregar dados da página de News (desfile)
-        return view('dashboard.news');
+        $estilistas = Estilista::all();
+        $banners = Home::all();
+        $desfiles = Desfile::all(); // Adiciona esta linha para buscar todos os desfiles
+        return view('dashboard.news', compact('estilistas', 'banners', 'desfiles'));
     }
 }

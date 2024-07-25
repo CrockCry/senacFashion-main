@@ -18,24 +18,29 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="titulo">Título</label>
-                <input type="text" class="form-control" id="titulo" name="titulo" value="{{ $desfile->titulo }}" required>
+                <label for="titulo_desfile">Título</label>
+                <input type="text" class="form-control" id="titulo_desfile" name="titulo_desfile" value="{{ $desfile->titulo_desfile }}" required>
             </div>
             <div class="form-group">
-                <label for="subtitulo">Subtítulo</label>
-                <input type="text" class="form-control" id="subtitulo" name="subtitulo" value="{{ $desfile->subtitulo }}" required>
+                <label for="subtitulo_desfile">Subtítulo</label>
+                <input type="text" class="form-control" id="subtitulo_desfile" name="subtitulo_desfile" value="{{ $desfile->subtitulo_desfile }}" required>
             </div>
             <div class="form-group">
-                <label for="data_evento">Data do Evento</label>
-                <input type="date" class="form-control" id="data_evento" name="data_evento" value="{{ $desfile->data_evento }}" required>
+                <label for="data_desfile">Data do Evento</label>
+                <input type="date" class="form-control" id="data_desfile" name="data_desfile" value="{{ $desfile->data_desfile }}" required>
             </div>
             <div class="form-group">
-                <label for="sobre_evento">Sobre o Evento</label>
-                <textarea class="form-control" id="sobre_evento" name="sobre_evento" required>{{ $desfile->sobre_evento }}</textarea>
+                <label for="sobre_desfile">Sobre o Evento</label>
+                <textarea class="form-control" id="sobre_desfile" name="sobre_desfile" required>{{ $desfile->sobre_desfile }}</textarea>
             </div>
             <div class="form-group">
-                <label for="banner_path">Banner</label>
-                <input type="file" class="form-control" id="banner_path" name="banner_path">
+                <label for="banner_desfile">Banner</label>
+                @if ($desfile->banner_desfile)
+                    <div class="mb-2">
+                        <img src="{{ asset('assets/img/' . $desfile->banner_desfile) }}" alt="Banner atual" style="width: 100%; max-width: 200px;">
+                    </div>
+                @endif
+                <input type="file" class="form-control" id="banner_desfile" name="banner_desfile">
             </div>
             <div class="form-group">
                 <label for="status">Status</label>
@@ -52,7 +57,7 @@
 
         @foreach($desfile->fotos as $foto)
             <div class="card mt-2">
-                <img class="card-img-top" src="{{ asset('storage/' . $foto->foto_path) }}" alt="Foto">
+                <img class="card-img-top" src="{{ asset('assets/img/modelos/' . $foto->foto_desfile) }}" alt="Foto" style="width: 35%">
                 <div class="card-body">
                     <form action="{{ route('dashboard.toggleStatusFotoDesfile', $foto->id) }}" method="POST" class="d-inline">
                         @csrf
