@@ -90,7 +90,7 @@
                         </button>
                     </form>
                     <a href="{{ route('dashboard.estilista.edit', $estilista->id) }}" class="btn btn-warning">Editar</a>
-                    <form action="{{ route('dashboard.destroy', $estilista->id) }}" method="POST" class="d-inline">
+                    <form action="{{ route('dashboard.estilista.update', $estilista->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Excluir</button>

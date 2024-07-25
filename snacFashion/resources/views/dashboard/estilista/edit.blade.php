@@ -24,7 +24,7 @@
             <div class="form-group">
                 <label for="imagem_path">Imagem:</label>
                 <input type="file" name="imagem_path" id="imagem_path" class="form-control">
-                <img src="{{ asset('storage/' . $estilista->imagem_path) }}" width="100" alt="Imagem atual">
+                <img src="{{ asset('assets/img' . $estilista->imagem_path) }}" width="100" alt="Imagem atual">
             </div>
             <div class="form-group">
                 <label for="status">Status:</label>
