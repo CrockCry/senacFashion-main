@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form action="{{ route('dashboard.storeDesfile') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('dashboard.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="titulo_desfile">Título</label>

@@ -11,12 +11,9 @@ class CreateTblfotosDesfileTable extends Migration
         if (!Schema::hasTable('tblfotos_desfile')) {
             Schema::create('tblfotos_desfile', function (Blueprint $table) {
                 $table->id();
-                $table->unsignedBigInteger('id_desfile');
+                $table->foreignId('id_desfile')->constrained('tbldesfile');
                 $table->string('foto_desfile');
-                $table->boolean('status');
-                $table->timestamps(); // Adicione esta linha
-
-                $table->foreign('id_desfile')->references('id')->on('tbldesfile')->onDelete('cascade');
+                $table->timestamps();
             });
         }
     }

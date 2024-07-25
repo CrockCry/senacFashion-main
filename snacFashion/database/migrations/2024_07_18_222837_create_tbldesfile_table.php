@@ -16,8 +16,7 @@ class CreateTbldesfileTable extends Migration
                 $table->string('subtitulo_desfile');
                 $table->text('sobre_desfile');
                 $table->date('data_desfile');
-                $table->boolean('status');
-                $table->timestamps(); // Adicione esta linha
+                $table->timestamps();
             });
         }
     }

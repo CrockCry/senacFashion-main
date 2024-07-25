@@ -11,3 +11,4 @@ class Home extends Model
 
     protected $fillable = ['banner_path', 'status'];
 }
+

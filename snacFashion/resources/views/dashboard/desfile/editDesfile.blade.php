@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form action="{{ route('dashboard.updateDesfile', $desfile->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('dashboard.desfile.editDesfile', $desfile->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">

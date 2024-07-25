@@ -9,8 +9,5 @@ class Estilista extends Model
 {
     protected $table = 'tblestilistas';
 
-    protected $fillable = [
-        'nome',
-        'imagem_path',
-    ];
+    protected $fillable = ['nome', 'imagem_path', 'status'];
 }

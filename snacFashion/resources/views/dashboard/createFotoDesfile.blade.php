@@ -17,8 +17,8 @@
         <form action="{{ route('dashboard.storeFotoDesfile', $desfileId) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="foto_path">Foto</label>
-                <input type="file" class="form-control" id="foto_path" name="foto_path" required>
+                <label for="foto_desfile">Foto</label>
+                <input type="file" class="form-control" id="foto_desfile" name="foto_desfile" required>
             </div>
             <div class="form-group">
                 <label for="status">Status</label>

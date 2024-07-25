@@ -9,14 +9,14 @@ class FotoDesfile extends Model
 {
     use HasFactory;
 
-    protected $table = 'tblfotos_desfile';
-
+    // Especifique os campos que podem ser preenchidos em massa
     protected $fillable = [
-        'id_desfile', 'foto_desfile', 'status'
+        'id_desfile',
+        'foto_desfile',
+        'status'
     ];
 
-    public function desfile()
-    {
-        return $this->belongsTo(Desfile::class, 'id_desfile');
-    }
+    // Caso o nome da tabela seja diferente do plural da model, especifique
+    protected $table = 'tblfotos_desfile';
 }
+
