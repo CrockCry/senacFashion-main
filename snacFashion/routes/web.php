@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\DesfileController;
 use App\Http\Controllers\EstilistaController;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/desfile', [DesfileController::class, 'index'])->name('desfile');
 Route::get('/estilista', [EstilistaController::class, 'index'])->name('estilista');
+Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
 // Rota para o dashboard
 Route::get('/dashboard', [DashController::class, 'index'])->name('dashboard.index');

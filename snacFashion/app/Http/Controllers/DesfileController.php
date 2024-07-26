@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class DesfileController extends Controller
 {
+
+    public function index()
+    {
+        $desfiles = Desfile::all();
+        return view('desfile', compact('desfiles'));
+    }
     public function news()
     {
         $desfiles = Desfile::with('fotos')->get();

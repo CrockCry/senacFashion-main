@@ -87,7 +87,7 @@
                         <a class="nav-link" href="{{ route('estilista') }}">Estilistas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
+                        <a class="nav-link" href="https://www.sp.senac.br/busca?q=moda#c">SENAC</a>
                     </li>
                 </ul>
             </div>

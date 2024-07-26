@@ -16,8 +16,7 @@ class DashController extends Controller
     {
         $estilistas = Estilista::all();
         $banners = Home::all();
-        $desfiles = Desfile::all();
-        return view('dashboard.index', compact('estilistas', 'banners', 'desfiles'));
+        return view('dashboard.index', compact('estilistas', 'banners'));
     }
 
     // Página de News
