@@ -72,17 +72,15 @@
             </div>
         @endforeach
 
-        <h1>Dashboard</h1>
-
         <h2>Estilistas</h2>
         <a href="{{ route('dashboard.estilista.create') }}" class="btn btn-success">Adicionar Estilista</a>
         @foreach ($estilistas as $estilista)
             <div class="card mt-2" style="display: flex; flex-direction: row">
                 <img class="card-img-top" src="{{ asset('assets/img/' . $estilista->imagem_path) }}" alt="Imagem"
-                    style="width: 35%">
+                    style="width: 15%">
                 <div class="card-body">
                     <h5 class="card-title">{{ $estilista->nome }}</h5>
-                    <form action="{{ route('dashboard.toggleStatus', $estilista->id) }}" method="POST" class="d-inline">
+                    <form action="{{ route('dashboard.toggleStatusEstilista', $estilista->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-{{ $estilista->status ? 'danger' : 'success' }}">

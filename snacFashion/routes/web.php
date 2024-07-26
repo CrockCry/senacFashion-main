@@ -40,11 +40,12 @@ Route::post('/dashboard/estilista', [EstilistaController::class, 'storeEstilista
 Route::get('/dashboard/estilista/{id}/edit', [EstilistaController::class, 'edit'])->name('dashboard.estilista.edit');
 Route::put('/dashboard/estilista/{id}', [EstilistaController::class, 'update'])->name('dashboard.estilista.update');
 Route::delete('/dashboard/estilista/{id}', [EstilistaController::class, 'destroy'])->name('dashboard.estilista.destroy');
+Route::put('/dashboard/estilista/toggleStatus/{id}', [EstilistaController::class, 'toggleStatusEstilista'])->name('dashboard.toggleStatusEstilista');
 
 // Rotas para desfiles
 Route::get('/dashboard/desfile/create', [DesfileController::class, 'createDesfile'])->name('dashboard.desfile.createDesfile');
 Route::post('/dashboard/desfile', [DesfileController::class, 'storeDesfile'])->name('dashboard.store');
-Route::get('/dashboard/desfile/{id}/edit', [DesfileController::class, 'editDesfile'])->name('dashboard.desfile.editDesfile');
+Route::get('/dashboard/desfile/{id}', [DesfileController::class, 'editDesfile'])->name('dashboard.desfile.editDesfile');
 Route::put('/dashboard/desfile/{id}', [DesfileController::class, 'updateDesfile'])->name('dashboard.update');
 Route::delete('/dashboard/desfile/{id}', [DesfileController::class, 'destroyDesfile'])->name('dashboard.destroy');
 Route::put('/dashboard/desfile/{id}/toggle-status', [DesfileController::class, 'toggleStatusDesfile'])->name('dashboard.toggleStatus');

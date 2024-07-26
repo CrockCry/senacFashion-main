@@ -56,15 +56,15 @@ class DesfileController extends Controller
         return redirect()->route('dashboard.news')->with('success', 'Desfile criado com sucesso.');
     }
     public function editDesfile($id)
-{
-    $desfile = Desfile::find($id);
+    {
+        $desfile = Desfile::find($id);
 
-    if (!$desfile) {
-        return redirect()->route('dashboard.news')->with('error', 'Desfile não encontrado.');
+        if (!$desfile) {
+            return redirect()->route('dashboard.news')->with('error', 'Desfile não encontrado.');
+        }
+
+        return view('dashboard.desfile.editDesfile', compact('desfile'));
     }
-
-    return view('dashboard.desfile.editDesfile', compact('desfile'));
-}
 
     public function updateDesfile(Request $request, $id)
     {
@@ -96,7 +96,7 @@ class DesfileController extends Controller
             'status' => $request->input('status')
         ]);
 
-        return redirect()->route('dashboard.desfile.editDesfile', $id)
+        return redirect()->route('dashboard.news', $id)
             ->with('success', 'Desfile atualizado com sucesso.');
     }
 
@@ -210,7 +210,7 @@ class DesfileController extends Controller
         $foto->status = !$foto->status;
         $foto->save();
 
-        return redirect()->route('dashboard.news')->with('success', 'Status da foto do desfile atualizado com sucesso.');
+        return redirect()->route('dashboard.desfile.editDesfile', ['id' => $foto->id_desfile])->with('success', 'Status da foto do desfile atualizado com sucesso.');
     }
 }
 

@@ -18,21 +18,21 @@ class EstilistaController extends Controller
     }
 
     public function storeEstilista(Request $request)
-{
-    $request->validate([
-        'nome' => 'required',
-        'imagem_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        'status' => 'required|boolean'
-    ]);
+    {
+        $request->validate([
+            'nome' => 'required',
+            'imagem_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'status' => 'required|boolean'
+        ]);
 
-    Estilista::create([
-        'nome' => $request->input('nome'),
-        'imagem_path' => $request->file('imagem_path')->store('images', 'public'),
-        'status' => $request->input('status')
-    ]);
+        Estilista::create([
+            'nome' => $request->input('nome'),
+            'imagem_path' => $request->file('imagem_path')->store('images', 'public'),
+            'status' => $request->input('status')
+        ]);
 
-    return redirect()->route('dashboard.index')->with('success', 'Estilista criado com sucesso.');
-}
+        return redirect()->route('dashboard.index')->with('success', 'Estilista criado com sucesso.');
+    }
 
     public function edit($id)
     {
@@ -74,12 +74,18 @@ class EstilistaController extends Controller
     public function destroy($id)
     {
         $estilista = Estilista::find($id);
-        $estilista->delete();
+        
+        if ($estilista) {
+            $estilista->delete();
 
-        return redirect()->route('dashboard.index')->with('success', 'Estilista deletado com sucesso.');
+            return redirect()->route('dashboard.index')
+            ->with('success', 'Estilista deletado com sucesso.');
+        }
+
+        return redirect()->route('dashboard.index')->with('error', 'Estilista não encontrado.');
     }
 
-    public function toggleStatus($id)
+    public function toggleStatusEstilista($id)
     {
         $estilista = Estilista::find($id);
         $estilista->status = !$estilista->status;
