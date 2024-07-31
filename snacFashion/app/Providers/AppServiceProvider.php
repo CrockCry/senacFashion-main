@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Registre quaisquer serviços de aplicação.
      *
      * @return void
      */
@@ -17,12 +17,12 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap quaisquer serviços de aplicação.
      *
      * @return void
      */
     public function boot()
     {
-        //
+        require base_path('app/Helpers/ImageHelper.php');
     }
 }

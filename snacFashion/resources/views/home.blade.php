@@ -101,7 +101,7 @@
         </video>
         <div class="stylist-overlay"></div>
         <div class="banner-content">
-            <h1 data-aos="fade-up" data-aos-duration="1000" class="tittleBanner">SMPFW: SETEMBRO 2025</h1>
+            <h1 data-aos="fade-up" data-aos-duration="1000" class="tittleBanner">SMPFW: SETEMBRO 2024</h1>
             <p data-aos="zoom-in" data-aos-duration="1500" class="subTitleBanner">Uma campanha imperdível</p>
             <a href="{{ route('desfile') }}" class="btn-banner">Veja mais</a>
         </div>
@@ -148,7 +148,7 @@
                     Com a primeira edição, realizada em 2023, o evento celebra a moda por meio da inclusão,
                     sustentabilidade, diversidade e empreendedorismo no setor.
                 </p>
-                <div class="parceria">
+                <div class="parceria" >
                     <img src="{{ asset('assets/img/logo4.png') }}" alt="">
                     <img src="{{ asset('assets/img/senac.png') }}" alt="">
                 </div>
@@ -159,8 +159,7 @@
 
     {{-- contato --}}
     <div class="contato">
-        <p>Faça parte da revolução</p>
-        <a href="#"></a>
+        <a href="https://www.sp.senac.br/busca?q=moda#c">Faça parte da revolução</a>
     </div>
 
     <!-- Footer -->
@@ -196,6 +195,16 @@
         </div>
     </footer>
 
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

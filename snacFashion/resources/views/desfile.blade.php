@@ -103,8 +103,7 @@
     @endforeach
     {{-- contato --}}
     <div class="contato">
-        <p>Faça parte da revolução</p>
-        <a href="#"></a>
+        <a href="https://www.sp.senac.br/busca?q=moda#c">Faça parte da revolução</a>
     </div>
 
 
@@ -140,6 +139,16 @@
             </div>
         </div>
     </footer>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>

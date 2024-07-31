@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form action="{{ route('dashboard.estilista.create') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('dashboard.storeEstilista') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>

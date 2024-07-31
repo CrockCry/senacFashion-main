@@ -170,39 +170,50 @@ class DesfileController extends Controller
 
         $fotoDesfile = FotoDesfile::find($id);
 
+        // Verifica se um novo arquivo de foto foi enviado
         if ($request->hasFile('foto_desfile')) {
             $fotoFile = $request->file('foto_desfile');
             $fotoPath = $fotoFile->storeAs('public/assets/img/modelos', $fotoFile->getClientOriginalName());
             $fotoPath = str_replace('public/assets/img/modelos/', '', $fotoPath);
+
+            // Opcional: exclua o arquivo antigo se necessário
+            if ($fotoDesfile->foto_desfile) {
+                Storage::disk('public')->delete('assets/img/modelos/' . $fotoDesfile->foto_desfile);
+            }
         } else {
+            // Mantém o caminho da foto antiga se nenhum novo arquivo for enviado
             $fotoPath = $fotoDesfile->foto_desfile;
         }
 
+        // Atualiza o registro no banco de dados
         $fotoDesfile->update([
             'foto_desfile' => $fotoPath,
             'status' => $request->input('status')
         ]);
 
-        return redirect()->route('dashboard.desfile.editDesfile', ['id' => $fotoDesfile->id_desfile])->with('success', 'Foto atualizada com sucesso.');
+        return redirect()->route('dashboard.desfile.editDesfile', ['id' => $fotoDesfile->id_desfile])
+            ->with('success', 'Foto atualizada com sucesso.');
     }
+
 
     public function destroyFoto($id)
     {
         $foto = FotoDesfile::find($id);
 
         if ($foto) {
-            // Supondo que $foto->desfile_id é o ID do desfile ao qual a foto pertence
-            $desfileId = $foto->desfile_id;
+            // Obtém o ID do desfile ao qual a foto pertence
+            $desfileId = $foto->id_desfile;
 
-            // Excluir a foto
+            // Exclui o registro da foto
             $foto->delete();
 
-            return redirect()->route('dashboard.desfile.editDesfile', $desfileId)
+            return redirect()->route('dashboard.desfile.editDesfile', ['id' => $desfileId])
                 ->with('success', 'Foto deletada com sucesso.');
         }
 
         return redirect()->route('dashboard.index')->with('error', 'Foto não encontrada.');
     }
+
 
     public function toggleStatusFoto($id)
     {
